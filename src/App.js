@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Profile from "./profile/Profile";
 
-function App() {
+const App = () => {
+  const Produit = [
+    {
+      Name: "Marwen",
+      biography: "GomyCode fullstack js Student ",
+      job: "Fullstack java developer",
+      photo: "profile.jpg",
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style={{ color: "#rgb(255,23,15,0.7)" }}>Welcome !</h1>
+      <br />
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        {Produit.map((el) => (
+          <Profile name={el.Name} bio={el.biography} job={el.job}>
+            <img src={el.photo} alt="tel" />
+          </Profile>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
